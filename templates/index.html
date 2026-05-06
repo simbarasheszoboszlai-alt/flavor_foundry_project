@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head> ... <title>FlavorFoundry | Django Demo</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <h1>flavor_foundry_project</h1>
+<h2>Welcome, {{ user }}</h2>
+<ul>
+{% for recipe in recipes %}
+  <li>{{ recipe.name }}</li>
+{% endfor %}
+</ul>
+    {% block content %}{% endblock %}
+
+    <a href="/add/">Add New Recipe</a> 
+</head>
+
+<body>
